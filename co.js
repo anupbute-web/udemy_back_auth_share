@@ -1,0 +1,29 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
+const MONGODB_URL = process.env.MONGODB_URL;
+
+const G_CLIENT_ID_EMAIL = process.env.G_CLIENT_ID_EMAIL;
+const G_SECRET_EMAIL = process.env.G_SECRET_EMAIL;
+const G_REFRESH_TOKEN_EMAIL = process.env.G_REFRESH_TOKEN_EMAIL;
+const GMAIL_USER_EMAIL = process.env.GMAIL_USER_EMAIL;
+const G_ACCESS_TOKEN_EMAIL = process.env.G_ACCESS_TOKEN_EMAIL;
+
+const G_CLIENT_ID_OAUTH2 = process.env.G_CLIENT_ID_OAUTH2;
+const G_CLIENT_SECRET_OAUTH2 = process.env.G_CLIENT_SECRET_OAUTH2;
+
+const GT_CLIENT_ID_OAUTH2 = process.env.GT_CLIENT_ID_OAUTH2;
+const GT_CLIENT_SECRET_OAUTH2 = process.env.GT_CLIENT_SECRET_OAUTH2;
+
+export {
+    G_CLIENT_ID_EMAIL ,
+    G_SECRET_EMAIL , 
+    G_REFRESH_TOKEN_EMAIL , 
+    GMAIL_USER_EMAIL , 
+    G_ACCESS_TOKEN_EMAIL , 
+    G_CLIENT_ID_OAUTH2 , 
+    G_CLIENT_SECRET_OAUTH2,
+    GT_CLIENT_ID_OAUTH2,
+    GT_CLIENT_SECRET_OAUTH2,
+    MONGODB_URL
+};
