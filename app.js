@@ -62,6 +62,8 @@ const io_redis = new Redis({
     port : 6379
 });
 
+let [CODE_VERIFIED , CODE_PENDING , CODE_BLOCKED] = ["verified" , "pending" , "blocked"];
+
 let retryAttemptsLUA = `
     local user = redis.call("HGETALL",KEYS[1])
     if next(user) ~= nil then
@@ -452,7 +454,6 @@ app.post('/auth/verify-otp',async(req,res)=>{
 
         [token , otp] = [token.trim() , `${otp.trim()}`]
         let ok = await io_redis.evalsha(verifyAttemptsSHA , 1 , token , otp);
-        console.log(Number(ok[0])==2)
 
         if(ok[0]==0) return res.json({success:true , msg:'too many attempts' , data:null , error:null});
         if(ok[0]==1) return res.json({success:true , msg:'wrong otp retry' , data:{token} , error:null});
@@ -741,3 +742,22 @@ async function startServer(){
 }
 
 startServer();
+
+
+// message ReviewRequest {
+//     string course_id = 1; 
+// }
+
+// message ReviewListRequest{
+//     repeated ReviewRequest list = 1;
+// }
+
+// message Review {
+//     string user = 1;
+//     int32 rating = 2;
+//     string comment = 3;
+// }
+
+// message ReviewListResponse {
+//     repeated Review reviews = 1;
+// }

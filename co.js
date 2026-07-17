@@ -5,8 +5,8 @@ const MONGODB_URL = process.env.MONGODB_URL;
 
 const G_CLIENT_ID_EMAIL = process.env.G_CLIENT_ID_EMAIL;
 const G_SECRET_EMAIL = process.env.G_SECRET_EMAIL;
-const G_REFRESH_TOKEN_EMAIL = process.env.G_REFRESH_TOKEN_EMAIL;
 const GMAIL_USER_EMAIL = process.env.GMAIL_USER_EMAIL;
+const G_REFRESH_TOKEN_EMAIL = process.env.G_REFRESH_TOKEN_EMAIL;
 const G_ACCESS_TOKEN_EMAIL = process.env.G_ACCESS_TOKEN_EMAIL;
 
 const G_CLIENT_ID_OAUTH2 = process.env.G_CLIENT_ID_OAUTH2;
